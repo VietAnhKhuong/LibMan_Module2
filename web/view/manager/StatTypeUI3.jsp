@@ -151,9 +151,14 @@
             </div>
         </div>
     </section>
-                <form method="post" class="actions">
+    <div class="actions" style="gap: 90px;">
+        <form method="get" action="<%= request.getContextPath() %>/view/manager/ManagerMainUI3.jsp" style="margin-top: 12px;">
+            <button type="submit" class="btn btn-quiet" id="subBack" name="subBack">Quay lại</button>
+        </form>
+        <form method="post" class="actions" style="margin-top: 12px;">
         <button type="submit" class="btn btn-quiet" id="subLogout" name="subLogout">Đăng xuất</button>
     </form>
+    </div>
 </main>
 </body>
 </html>

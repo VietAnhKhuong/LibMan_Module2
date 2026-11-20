@@ -154,7 +154,11 @@
             
         </div>
     </section>
-                <form method="post" class="actions">
+    <form method="post" class="actions">
+        <button type="submit" class="btn btn-quiet" id="subBack" name="subLogout">Quay lại</button>
+    </form>
+    <!-- NÚT ĐĂNG XUẤT Ở DƯỚI (cách nút trên 12px) -->
+    <form method="post" class="actions" style="margin-top: 12px;">
         <button type="submit" class="btn btn-quiet" id="subLogout" name="subLogout">Đăng xuất</button>
     </form>
 </main>
