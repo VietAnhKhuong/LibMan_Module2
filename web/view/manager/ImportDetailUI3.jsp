@@ -44,6 +44,12 @@
     } catch (IllegalStateException e) {
         application.log("ImportDetailUI3: lỗi CSDL", e);
     }
+    // Xử lý sự kiện khi bấm nút Đăng xuất (subLogout)
+    if (request.getParameter("subLogout") != null) {
+        session.invalidate();
+        response.sendRedirect(request.getContextPath() + "/view/member/LoginUI3.jsp");
+        return;
+    }
 %>
 <!DOCTYPE html>
 <html lang="vi">
@@ -170,6 +176,24 @@
         .data-table tfoot td { font-weight: 700; border-bottom: 0; border-top: 2px solid var(--ink); }
 
         .empty { margin: 16px 0 4px; color: var(--muted); }
+        
+                .btn-logout {
+            display: inline-block;
+            padding: 10px 22px;
+            font: inherit;
+            font-weight: 600;
+            color: #fff;
+            background: var(--pine);
+            border: 0;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .btn-logout:hover { 
+            background: var(--pine-dark); 
+        }
     </style>
 </head>
 <body>
@@ -213,6 +237,9 @@
     <form method="get" action="<%= request.getContextPath() %>/view/manager/ImportListUI3.jsp" class="actions">
         <button type="submit" class="btn btn-quiet" id="subBack" name="subBack">Quay lại</button>
     </form>
+    <form method="post" class="actions">
+                <button type="submit" class="btn btn-quiet" id="subLogout" name="subLogout">Đăng xuất</button>
+            </form>
 </main>
 </body>
 </html>

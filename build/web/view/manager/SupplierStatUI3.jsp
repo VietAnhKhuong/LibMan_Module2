@@ -45,6 +45,12 @@
     } catch (IllegalStateException e) {
         application.log("SupplierStatUI3: lỗi CSDL", e);
     }
+    // Xử lý sự kiện khi bấm nút Đăng xuất (subLogout)
+    if (request.getParameter("subLogout") != null) {
+        session.invalidate();
+        response.sendRedirect(request.getContextPath() + "/view/member/LoginUI3.jsp");
+        return;
+    }
 %>
 <!DOCTYPE html>
 <html lang="vi">
@@ -188,6 +194,24 @@
         .btn-link:focus-visible { outline: 3px solid #7fb8a8; outline-offset: 2px; }
 
         .empty { margin: 16px 0 4px; color: var(--muted); }
+        
+                .btn-logout {
+            display: inline-block;
+            padding: 10px 22px;
+            font: inherit;
+            font-weight: 600;
+            color: #fff;
+            background: var(--pine);
+            border: 0;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .btn-logout:hover { 
+            background: var(--pine-dark); 
+        }
     </style>
 </head>
 <body>
@@ -234,6 +258,9 @@
     <form method="get" action="<%= request.getContextPath() %>/view/manager/StatPeriodUI3.jsp" class="actions">
         <button type="submit" class="btn btn-quiet" id="subBack" name="subBack">Quay lại</button>
     </form>
+        <form method="post" class="actions">
+                <button type="submit" class="btn btn-quiet" id="subLogout" name="subLogout">Đăng xuất</button>
+            </form>
 </main>
 </body>
 </html>
