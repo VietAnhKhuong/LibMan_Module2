@@ -197,6 +197,7 @@
     <section class="card">
         <div class="card-head">
             <h1>Thống kê NCC theo số lượng nhập</h1>
+            <p>Tên: <%= manager.getName().replace("&", "&amp;").replace("<", "&lt;") %> &middot; Chức vụ: <%= manager.getPosition().replace("&", "&amp;").replace("<", "&lt;") %></p>
             <p>Từ ngày <%= new SimpleDateFormat("dd/MM/yyyy").format(startDate) %> đến ngày <%= new SimpleDateFormat("dd/MM/yyyy").format(endDate) %></p>
         </div>
         <div class="card-body">

@@ -152,6 +152,7 @@
     <form class="card" method="post" action="<%= request.getContextPath() %>/view/manager/SupplierStatUI3.jsp" novalidate>
         <div class="card-head">
             <h1>Thống kê NCC theo số lượng nhập</h1>
+            <p>Tên: <%= manager.getName().replace("&", "&amp;").replace("<", "&lt;") %> &middot; Chức vụ: <%= manager.getPosition().replace("&", "&amp;").replace("<", "&lt;") %></p>
             <p>Chọn khoảng thời gian thống kê</p>
         </div>
         <div class="card-body">

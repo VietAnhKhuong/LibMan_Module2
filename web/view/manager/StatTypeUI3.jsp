@@ -107,6 +107,7 @@
     <section class="card">
         <div class="card-head">
             <h1>Chọn loại thống kê</h1>
+            <p>Tên: <%= manager.getName().replace("&", "&amp;").replace("<", "&lt;") %> &middot; Chức vụ: <%= manager.getPosition().replace("&", "&amp;").replace("<", "&lt;") %></p>
         </div>
         <div class="card-body">
             <div id="outsubStatTypeList" class="toolbar">

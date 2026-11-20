@@ -179,6 +179,7 @@
     <section class="card">
         <div class="card-head">
             <h1>Chi tiết hóa đơn của NCC <%= supplier.getName().replace("&", "&amp;").replace("<", "&lt;") %> ngày <%= new SimpleDateFormat("dd/MM/yyyy").format(invoice.getImportDate()) %></h1>
+            <p>Tên: <%= manager.getName().replace("&", "&amp;").replace("<", "&lt;") %> &middot; Chức vụ: <%= manager.getPosition().replace("&", "&amp;").replace("<", "&lt;") %></p>
         </div>
         <div class="card-body">
             <% if (listDetail == null) { %>
